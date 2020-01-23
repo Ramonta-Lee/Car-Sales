@@ -1,9 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-import 'bulma/css/bulma.css';
-import './styles.scss';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+import "bulma/css/bulma.css";
+import "./styles.scss";
+import { featureReducer } from "./reducers/featureReducers";
+
+const store = createStore(featureReducer);
+// console.log(store.getState());
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
+);
