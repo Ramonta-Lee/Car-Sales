@@ -10,7 +10,7 @@ import "./styles.scss";
 import { featureReducer } from "./reducers/featureReducers";
 
 const store = createStore(featureReducer);
-console.log(store.getState());
+// console.log(store.getState());
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

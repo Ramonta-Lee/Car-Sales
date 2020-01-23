@@ -1,9 +1,11 @@
-export const buyItem = () => {
-  return { type: "ADD_FEATURE" };
+// export const ADD_FEATURE = "ADD_FEATURE";
+export const buyItem = (feature) => {
+  return { type: "ADD_FEATURE", payload: feature };
 };
 
-export const removeFeature = () => {
+// export const REMOVE_FEATURE = "REMOVE_FEATURE";
+export const removeFeature = (id) => {
   return {
-    type: "REMOVE_FEATURE"
+    type: "REMOVE_FEATURE", payload: id
   };
 };
