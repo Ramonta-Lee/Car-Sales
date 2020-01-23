@@ -6,21 +6,23 @@ import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
-import { buyItem as addItem, removeFeature as subtractFeature } from "./actions/featureActions";
+import {
+  buyItem as addItem,
+  removeFeature as subtractFeature
+} from "./actions/featureActions";
 
 const App = props => {
-//  console.log("I am App props", props)
+  //  console.log("I am App props", props)
 
   const removeFeature = item => {
-    console.log("hello", item)
-    props.subtractFeature(item)
+    console.log("hello", item);
+    props.subtractFeature(item);
     // dispatch an action here to remove an item
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
-    props.addItem(item)
-
+    props.addItem(item);
   };
 
   return (
@@ -31,7 +33,7 @@ const App = props => {
       </div>
       <div className="box">
         <AdditionalFeatures
-        buyItem={buyItem}
+          buyItem={buyItem}
           additionalFeatures={props.state.additionalFeatures}
         />
         <Total
